@@ -55,10 +55,14 @@ a {
 	padding: 0 1rem;
 	margin: 0 auto;
 	display: flex;
+	flex-wrap: wrap;
 
 	&--fluid {
 		max-width: none;
-		display: flex;
+	}
+
+	&--narrow {
+		max-width: 980px;
 	}
 }
 
