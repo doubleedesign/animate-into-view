@@ -1,0 +1,21 @@
+{
+	"name": "animate-into-view",
+	"version": "0.1",
+	"description": "Animate page elements as they become visible in the viewport. Customise the type of animation and how much of the element should be in the viewport before the animation begins.",
+	"author": "Leesa Ward",
+	"homepage": "",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"license": "MIT",
+	"scripts": {
+		"sass:dev": "sass --watch src:dist demo",
+		"build": "tsc && sass src:dist"
+	},
+	"devDependencies": {
+		"eslint": "^8.34.0",
+		"sass": "^1.58.3",
+		"typescript": "^4.9.5"
+	}
+}

@@ -1,0 +1,131 @@
+$colours: (
+	'primary': '',
+	'secondary': '',
+	'accent': '',
+	'dark': #101010,
+	'light': #EFEFEF
+);
+
+$grid-breakpoints: (
+		xs: 300px,
+		sm: 620px,
+		md: 768px,
+		lg: 992px,
+		xl: 1280px,
+		xxl: 1440px
+) !default;
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+	$min: map-get($breakpoints, $name);
+
+	@return if($min != 0, $min, null);
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+
+	@if $min {
+
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 300;
+}
+
+a {
+	transition: all 0.3s ease;
+}
+
+.container {
+	max-width: 1280px;
+	padding: 0 1rem;
+	margin: 0 auto;
+	display: flex;
+
+	&--fluid {
+		max-width: none;
+		display: flex;
+	}
+}
+
+.icon {
+	width: 2rem;
+	height: 2rem;
+}
+
+.module {
+	width: 100%;
+	padding: 2rem 0;
+
+	&__header {
+		background: map-get($colours, 'dark');
+		color: white;
+
+		.container {
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+
+			span {
+				display: inline-block;
+				padding-left: 0.5rem;
+				text-decoration: underline;
+				text-decoration-color: transparent;
+				transition: text-decoration-color 0.3s ease;
+			}
+
+			&:hover, &:focus {
+				span {
+					text-decoration-color: currentColor;
+				}
+			}
+		}
+	}
+
+	&__hero {
+
+	}
+
+	&__copy {
+
+	}
+
+	&__copy-image {
+
+		&__copy,
+		&__image {
+			@include media-breakpoint-up(md) {
+				width: 50%;
+				flex-basis: 50%;
+			}
+		}
+	}
+
+	&__call-to-action {
+
+	}
+
+	&__footer {
+		text-align: center;
+	}
+}
