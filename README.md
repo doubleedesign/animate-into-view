@@ -2,7 +2,7 @@
 
 Yet another CSS animation library.
 
-**Using IntersectionObserver and CSS animations to have page elements make grand entrances.**
+**Uses IntersectionObservers and CSS animations to have page elements make grand entrances.**
 
 - [Basic usage](#basic-usage)
   - [Add your own animations](#add-your-own-animations)
