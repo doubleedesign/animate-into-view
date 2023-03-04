@@ -13,7 +13,7 @@
 	"scripts": {
 		"sass:dev": "sass --watch src:dist docs",
 		"build": "tsc && sass src:dist demo && cp -r dist demo",
-		"build:docs": "cd docusaurus && yarn build && mv build/* ../docs && cp -r ../demo ../docs/build"
+		"build:docs": "cd docusaurus && yarn build && mv build/* ../docs && cp -r ../demo ../docs/"
 	},
 	"devDependencies": {
 		"eslint": "^8.34.0",
