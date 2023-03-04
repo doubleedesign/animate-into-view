@@ -90,3 +90,56 @@
 		margin-left: auto;
 	}
 }
+
+.prism-code.language-javascript .dom.variable {
+	color: rgb(246, 78, 212) !important;
+}
+
+.prism-code.language-javascript .method {
+	color: rgb(255,195,107) !important;
+	font-style: normal !important;
+}
+
+.prism-code.language-typescript .keyword {
+	color: rgb(141,168,255);
+}
+
+.prism-code.language-typescript .class-name {
+	color: rgb(130, 218, 252) !important;
+	text-decoration: underline;
+}
+
+.prism-code.language-typescript .token.plain:not(.builtin):not(.punctuation) {
+	color: rgb(137, 255, 162) !important;
+}
+
+.prism-code.language-html .attr-value.punctuation {
+	color: rgb(137, 255, 162) !important;
+}
+
+.prism-code.language-scss .atrule.rule,
+.prism-code.language-css .atrule.rule {
+	color: rgb(246, 78, 212) !important;
+}
+
+.prism-code.language-scss .atrule.rule + .atrule.token,
+.prism-code.language-css .atrule.rule + .atrule.token {
+	color: rgb(255, 255, 115) !important;
+	font-style: italic;
+}
+
+.prism-code.language-scss .atrule.operator {
+	color: white !important;
+	font-style: normal !important;
+}
+
+.prism-code.language-scss .keyword {
+	color: rgb(246, 78, 212) !important;
+}
+
+.prism-code.language-scss .selector,
+.prism-code.language-scss .selector.class,
+.prism-code.language-css .selector.class,
+.prism-code.language-javascript .property {
+	color: rgb(137, 255, 162) !important;
+}
