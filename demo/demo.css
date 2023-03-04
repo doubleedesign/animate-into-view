@@ -335,6 +335,7 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 1rem 0;
+  background: white;
 }
 @media (min-width: 768px) {
   .module__copy-image__copy {

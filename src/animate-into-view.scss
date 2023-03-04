@@ -1,0 +1,148 @@
+@mixin enter-stage-left {
+	transform: translate3d(-100%, 0, 0);
+}
+
+@mixin enter-stage-right {
+	transform: translate3d(100%, 0, 0);
+}
+
+@mixin enter-from-upstage {
+	transform: translate3d(0, 100%, 0);
+}
+
+@mixin enter-from-downstage {
+	transform: translate3d(0, -100%, 0);
+}
+
+@mixin final-position {
+	transform: none;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		@include enter-from-upstage;
+		opacity: 0;
+	}
+	to {
+		@include final-position;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		@include enter-from-downstage;
+		opacity: 0;
+	}
+	to {
+		@include final-position;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		@include enter-stage-left;
+		opacity: 0;
+	}
+	to {
+		@include final-position;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInRight {
+	from {
+		@include enter-stage-right;
+		opacity: 0;
+	}
+	to {
+		@include final-position;
+		opacity: 1;
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		@include enter-from-upstage;
+		visibility: visible;
+	}
+	to {
+		@include final-position;
+	}
+}
+
+@keyframes slideInDown {
+	from {
+		@include enter-from-downstage;
+		visibility: visible;
+	}
+	to {
+		@include final-position;
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		@include enter-stage-left;
+		visibility: visible;
+	}
+	to {
+		@include final-position;
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		@include enter-stage-right;
+		visibility: visible;
+	}
+	to {
+		@include final-position;
+	}
+}
+
+$animation_names: (
+	'fadeIn',
+	'fadeInUp',
+	'fadeInDown',
+	'fadeInLeft',
+	'fadeInRight',
+	'slideInUp',
+	'slideInDown',
+	'slideInLeft',
+	'slideInRight'
+);
+
+.animate-into-view {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	visibility: hidden;
+
+	@media (prefers-reduced-motion) {
+		visibility: visible;
+	}
+
+	&.aiv-visible {
+		visibility: visible;
+
+		@each $animation_name in $animation_names {
+			&.aiv-#{$animation_name} {
+				animation-name: #{$animation_name};
+
+				@media (prefers-reduced-motion) {
+					animation-name: none;
+				}
+			}
+		}
+	}
+}

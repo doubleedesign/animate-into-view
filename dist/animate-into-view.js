@@ -3,18 +3,21 @@ export function animateIntoView(settings) {
     const options = {
         threshold: settings.threshold
     };
-    [...elements].forEach(function (element) {
-        element.classList.add('animate');
-        observer.observe(element);
-    });
     const observer = new IntersectionObserver(function (entries) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate--visible');
-                entry.target.classList.add(`animate--${settings.type}`);
-                entry.target.classList.remove('animate');
+                entry.target.classList.add('aiv-visible');
                 observer.unobserve(entry.target);
             }
         });
     }, options);
+    [...elements].forEach(function (element) {
+        observer.observe(element);
+    });
 }
+document.addEventListener('DOMContentLoaded', function () {
+    animateIntoView({
+        selector: '.animate-into-view',
+        threshold: 0.75
+    });
+});

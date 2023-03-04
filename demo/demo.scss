@@ -361,6 +361,7 @@ a {
 			flex-direction: column;
 			justify-content: center;
 			padding: 1rem 0;
+			background: white;
 
 			@include media-breakpoint-up(md) {
 			    padding: 1rem;
