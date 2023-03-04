@@ -1,6 +1,6 @@
 {
 	"name": "@doubleedesign/animate-into-view",
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"type": "module",
 	"description": "Using IntersectionObserver and CSS animations to have page elements make grand entrances.",
 	"author": "Leesa Ward",
