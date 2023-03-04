@@ -165,6 +165,18 @@ a {
 
 	h1 {
 		margin: 0;
+		display: flex;
+		align-items: center;
+
+		span {
+			display: block;
+			margin-left: 1rem;
+			background: map-get($colours, 'accent');
+			padding: 0.5rem;
+			font-weight: 300;
+			font-size: 0.4em;
+			text-transform: uppercase;
+		}
 	}
 
 	.container {
@@ -227,6 +239,7 @@ a {
 	}
 
 	ul {
+		font-size: 0.8rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
