@@ -12,7 +12,7 @@
 	"license": "MIT",
 	"scripts": {
 		"sass:dev": "sass --watch src:dist docs",
-		"build": "tsc && sass src:dist demo && cp -r dist demo && cp -r demo docusaurus/build"
+		"build": "tsc && sass src:dist demo && cp -r dist demo && cp -r demo docs"
 	},
 	"devDependencies": {
 		"eslint": "^8.34.0",
