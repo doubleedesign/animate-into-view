@@ -406,4 +406,12 @@ a {
   padding-top: 0;
 }
 
-/*# sourceMappingURL=demo.css.map */
+.site-header {
+  background: #0092b3;
+}
+.site-header__subheader {
+  background: #00a6cc;
+  box-shadow: 0 0 1rem 0 #007d99;
+}
+
+/*# sourceMappingURL=demo-js.css.map */

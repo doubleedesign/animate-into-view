@@ -127,9 +127,54 @@ Example:
 
 
 ### With JS
-> Still to come.
+This option allows you to apply animations using your own selectors, rather than manually adding classes to your HTML. This option also allows you to customise the intersection threshold (i.e., how much of the element needs to be visible for the animation to run) on a per-selector basis.
 
-You will be able to apply animations without adding anything to your HTML, by using your own selectors. This option also allows you to customise the intersection threshold (i.e., how much of the element needs to be visible for the animation to run) on a per-selector basis.
+This works by dynamically adding the same classes used in the CSS/SCSS options, i.e., `animate-into-view` and `aiv-[animation]` to start with, and `aiv-visible` when the element scrolls into view. So if you don't want classes added  to your HTML _at all_, this isn't that (...yet, anyway). 
+
+1. Create a JavaScript file (if you don't already have one that you want to add this to).
+
+2. In your HTML, include either the provided CSS file or your own built using the SCSS instructions above, plus your JS file.
+```html
+<link href="path/to/animate-into-view/dist/animate-into-view.css" rel="stylesheet"/>
+<script src="path/to/your-script.js" type="module"></script>
+```
+
+3. In your JavaScript file, import `animateIntoView` and call it where appropriate, passing in an `AnimateIntoViewSettings` object:
+
+```typescript
+// Settings object options
+interface AnimateIntoViewSettings {
+    selector: string; // required; can use multiple comma-separated selectors just like in CSS
+    threshold?: number; // optional; defaults to 0.75
+    type?: 'fadeIn' | 'fadeInDown' | 'fadeInUp' | 'fadeInLeft' | 'fadeInRight' | 'slideInDown' | 'slideInUp' | 'slideInLeft' | 'slideInRight' // optional; defaults to fadeIn
+}
+```
+
+Example:
+
+```html
+<section class="module module__call-to-action">
+    <div class="container">
+        <div class="module module__call-to-action__inner">
+            <h2>So it seems like this internet thing is here to stay.</h2>
+            <p>Just to be clear, comedy with the plates will not be well-received.</p>
+            <a class="btn" href="#">Button to nowhere</a>
+        </div>
+    </div>
+</section>
+```
+
+```javascript
+import { animateIntoView } from "path/to/animate-into-view.js";
+
+document.addEventListener('DOMContentLoaded', function() {
+    animateIntoView({
+        selector: '.module__call-to-action',
+        threshold: 0.75,
+        type: 'fadeInUp'
+    });
+});
+```
 
 ## Accessibility
 For users with [prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) enabled, all animations are turned off by default.

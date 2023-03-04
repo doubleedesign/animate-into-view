@@ -79,6 +79,12 @@ a {
 .btn--secondary:hover, .btn--secondary:focus, .btn--secondary:active {
   background: #ab0064;
 }
+.btn--tertiary {
+  background: #00d0ff;
+}
+.btn--tertiary:hover, .btn--tertiary:focus, .btn--tertiary:active {
+  background: #00a6cc;
+}
 .btn--accent {
   background: #67d203;
 }
@@ -133,6 +139,10 @@ a {
 
 .bg-secondary {
   background: #de0082;
+}
+
+.bg-tertiary {
+  background: #00d0ff;
 }
 
 .bg-accent {

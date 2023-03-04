@@ -6,14 +6,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;600&display=swap" rel="stylesheet">
-    <link href="demo.css" rel="stylesheet"/>
     <link href="../dist/animate-into-view.css" rel="stylesheet"/>
-    <script src="../dist/animate-into-view.js" type="module"></script>
+    <link href="demo-js.css" rel="stylesheet"/>
+    <script src="demo.js" type="module"></script>
 </head>
 <body>
-<header class="site-header animate-into-view aiv-slideInDown">
+<header class="site-header">
     <div class="container container--fluid">
-        <h1>Animate-Into-View <span>Basic demo</span></h1>
+        <h1>Animate-Into-View <span>JavaScript Demo</span></h1>
     </div>
     <div class="site-header__subheader">
         <div class="container container--fluid">
@@ -26,10 +26,10 @@
     </div>
 </header>
 <section class="module module__hero">
-    <div class="module__hero__image animate-into-view aiv-fadeIn">
-        <img src="images/city-of-gold-coast-O3ji6Tv0PtY-unsplash.jpg" alt="Gold Coast"/>
+    <div class="module__hero__image">
+        <img src="images/brayden-gray-ZBgwWV1mrWE-unsplash.jpg" alt="Christchurch city"/>
     </div>
-    <div class="module__hero__copy animate-into-view aiv-fadeInRight">
+    <div class="module__hero__copy">
         <div class="container">
             <div class="module__hero__copy__inner">
                 <h2>You don't have a TV? What's all your furniture pointed at?</h2>
@@ -40,7 +40,7 @@
         </div>
     </div>
 </section>
-<section class="module module__copy animate-into-view aiv-fadeIn">
+<section class="module module__copy">
     <div class="container container--narrow">
         <h2>They don’t know that we know they know we know.</h2>
         <p>You can't just give up. Is that what a dinosaur would do? I just stopped and I said, what if I don't want to be a shoe? What if I want to be a
@@ -53,9 +53,9 @@
             great hair. Oh thanks, I grow it myself. </p>
     </div>
 </section>
-<section class="module module__call-to-action animate-into-view aiv-fadeInUp">
+<section class="module module__call-to-action">
     <div class="container">
-        <div class="module module__call-to-action__inner bg-accent">
+        <div class="module module__call-to-action__inner bg-primary">
             <h2>So it seems like this internet thing is here to stay.</h2>
             <p>Just to be clear, comedy with the plates will not be well-received.</p>
             <a class="btn btn--white" href="https://github.com/doubleedesign/animate-into-view" target="_blank">
@@ -65,7 +65,7 @@
         </div>
     </div>
 </section>
-<section class="module module__copy animate-into-view aiv-fadeIn">
+<section class="module module__copy">
     <div class="container container--narrow">
         <h2>We ordered the Joey Special. Three pizzas!</h2>
         <p>What if he calls his own cell phone to find out who found it and I answer and we start talking and we fall in love? I mean, wouldn't that be a great
@@ -83,10 +83,10 @@
 </section>
 <section class="module module__copy-image module__copy-image--odd">
     <div class="container">
-        <div class="module__copy-image__image animate-into-view aiv-fadeInRight">
+        <div class="module__copy-image__image">
             <img src="images/danilo-batista-eSceitc-s30-unsplash.jpg" alt="Photo of a kitten"/>
         </div>
-        <div class="module__copy-image__copy animate-into-view aiv-fadeInLeft">
+        <div class="module__copy-image__copy">
             <h2>That's a lot of information to get in 30 seconds.</h2>
             <p>Joey doesn't share food! Three bathrooms in this place, and I threw up in a coat closet. Well, the fridge broke, so I had to eat everything. Come
                 on, Ross, you're a paleontologist. Dig a little deeper.</p>
@@ -96,19 +96,19 @@
 </section>
 <section class="module module__copy-image module__copy-image--even">
     <div class="container">
-        <div class="module__copy-image__image animate-into-view aiv-fadeInLeft">
+        <div class="module__copy-image__image">
             <img src="images/bjorn-agerbeek-fjDtABgNais-unsplash.jpg" alt="Photo of a puppy"/>
         </div>
-        <div class="module__copy-image__copy animate-into-view aiv-fadeInRight">
+        <div class="module__copy-image__copy">
             <h2>Come on, Ross, you're a paleontologist. Dig a little deeper.</h2>
             <p>I understand why Superman is here, but why is there a porcupine at the Easter Bunny's funeral? Three bathrooms in this place, and I threw up in a coat closet. You don't have a TV? What's all your furniture pointed at? They
                 don’t know that we know they know we know. If it's not a right angle, it's a wrong angle. I'm sorry, it was a one-time thing. I was very drunk, and it was someone else's subconscious. I want to quit the gym!</p>
         </div>
     </div>
 </section>
-<section class="module module__call-to-action animate-into-view aiv-fadeIn">
+<section class="module module__call-to-action">
     <div class="container">
-        <div class="module module__call-to-action__inner bg-secondary">
+        <div class="module module__call-to-action__inner bg-tertiary">
             <h2>I'm not great at the advice. Can I interest you in a sarcastic comment?</h2>
             <p>Welcome to the real world! It sucks. You're gonna love it!</p>
             <a class="btn btn--white" href="https://github.com/doubleedesign/animate-into-view" target="_blank">
@@ -118,12 +118,12 @@
         </div>
     </div>
 </section>
-<footer class="site-footer animate-into-view aiv-slideInUp">
+<footer class="site-footer">
     <p>Animate-Into-View developed by <a href="https://www.leesaward.dev" target="_blank">Leesa Ward</a>.</p>
     <ul>
         <li>Placeholder text from <a href="https://github.com/doubleedesign/friends-ipsum" target="_blank">Central Perk Ipsum</a></li>
-        <li>Gold Coast image: Photo by <a href="https://unsplash.com/@cityofgoldcoast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-            City of Gold Coast</a> on <a href="https://unsplash.com/photos/O3ji6Tv0PtY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        <li>Christchurch image: Photo by <a href="https://unsplash.com/@braydengray__?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Brayden Gray</a> on <a href="https://unsplash.com/photos/ZBgwWV1mrWE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </li>
         <li>Kitten image: Photo by <a href="https://unsplash.com/@hiddenwindows?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
             Danilo Batista</a> on <a href="https://unsplash.com/photos/eSceitc-s30?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
