@@ -1,18 +1,18 @@
 {
 	"name": "@doubleedesign/animate-into-view",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"type": "module",
 	"description": "Using IntersectionObserver and CSS animations to have page elements make grand entrances.",
 	"author": "Leesa Ward",
-	"homepage": "",
+	"homepage": "https://doubleedesign.github.io/animate-into-view/",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/doubleedesign/animate-into-view"
 	},
 	"license": "MIT",
 	"scripts": {
-		"sass:dev": "sass --watch src:dist demo",
-		"build": "tsc && sass src:dist demo"
+		"sass:dev": "sass --watch src:dist docs",
+		"build": "tsc && sass src:dist docs && cp -r dist docs"
 	},
 	"devDependencies": {
 		"eslint": "^8.34.0",
