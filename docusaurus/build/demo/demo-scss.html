@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animate-Into-View Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;600&display=swap" rel="stylesheet">
+    <link href="demo-scss.css" rel="stylesheet"/>
+    <script src="dist/animate-into-view.js" type="module"></script>
+</head>
+<body>
+<header class="site-header animate-into-view">
+    <div class="container container--fluid">
+        <h1>Animate-Into-View <span>SCSS Demo</span></h1>
+    </div>
+    <div class="site-header__subheader">
+        <div class="container container--fluid">
+            <p>Using IntersectionObserver and CSS animations to have page elements make grand entrances</p>
+            <a href="https://github.com/doubleedesign/animate-into-view" target="_blank">
+                <img class="icon" src="images/github-mark-white.svg" alt="">
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </div>
+</header>
+<section class="module module__hero">
+    <div class="module__hero__image animate-into-view">
+        <img src="images/maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Golden Gate Bridge"/>
+    </div>
+    <div class="module__hero__copy animate-into-view">
+        <div class="container">
+            <div class="module__hero__copy__inner">
+                <h2>You don't have a TV? What's all your furniture pointed at?</h2>
+                <p>So it seems like this internet thing is here to stay. I understand why Superman is here, but why is there a porcupine at the Easter Bunny's funeral?
+                    I needed a plan, a plan to get over my man. And what's the opposite of man? Jam.</p>
+                <a class="btn btn--accent" href="#">Button to nowhere</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="module module__copy animate-into-view">
+    <div class="container container--narrow">
+        <h2>They don’t know that we know they know we know.</h2>
+        <p>You can't just give up. Is that what a dinosaur would do? I just stopped and I said, what if I don't want to be a shoe? What if I want to be a
+            purse, you know, or a hat? Santa, the armadillo and I will have a little talk in the kitchen. There's a sentence I never thought I'd say. What
+            was I thinking at dinner? "Do you want soup or salad?" Both! Always order both!</p>
+        <p>That's a lot of information to get in 30 seconds. I wanna quit the gym! You know what I figure? If I can do laundry, there's nothing I can’t do. I
+            understand why Superman is here, but why is there a porcupine at the Easter Bunny's funeral? They don’t know that we know they know we know. Welcome to
+            the real world! It sucks. You're gonna love it! I'm a gym member. I try to go four times a week, but I've missed the last twelve hundred times.</p>
+        <p>We were on a break! They're as different as night and...later that night. Look at me! I'm Chandler! Could I BE wearing any more clothes? You have really
+            great hair. Oh thanks, I grow it myself. </p>
+    </div>
+</section>
+<section class="module module__call-to-action animate-into-view">
+    <div class="container">
+        <div class="module module__call-to-action__inner bg-primary">
+            <h2>So it seems like this internet thing is here to stay.</h2>
+            <p>Just to be clear, comedy with the plates will not be well-received.</p>
+            <a class="btn btn--white" href="https://github.com/doubleedesign/animate-into-view" target="_blank">
+                <img class="icon" src="images/github-mark.svg" alt="">
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="module module__copy animate-into-view">
+    <div class="container container--narrow">
+        <h2>We ordered the Joey Special. Three pizzas!</h2>
+        <p>What if he calls his own cell phone to find out who found it and I answer and we start talking and we fall in love? I mean, wouldn't that be a great
+            story? Kind of like a fairy tale for the digital age. So it seems like this internet thing is here to stay. That's a lot of information to get in 30
+            seconds I needed a plan, a plan to get over my man. And what's the opposite of man? Jam. What was I thinking at dinner? "Do you want soup or salad?"
+            Both! Always order both! </p>
+        <p>They're as different as night and...later that night. You see, my sister makes these amazing turkey sandwiches. Her secret is, she puts an extra
+            slice of gravy-soaked bread in the middle; I call it the Moist Maker. I wanna quit the gym! Oh God. Can open. Worms everywhere! What's the
+            difference between beer and lager? I don't know. We could look it up. Things are about to get wild. Well, the fridge broke, so I had to eat
+            everything. Look at me! I'm Chandler! Could I BE wearing any more clothes? There's an old Russian expression...Roughly translated, it means: "This
+            thing that I'm looking at: Wow." </p>
+        <p>We might still have some money if your father hadn't thought it was a good idea to sell ice over the internet. It's a moo point. It’s like a cow's opinion; it doesn't matter. It's moo. I'm Chandler. I make jokes when I’m
+            uncomfortable. You have to stop the Q-Tip when there’s resistance!</p>
+    </div>
+</section>
+<section class="module module__copy-image module__copy-image--odd">
+    <div class="container">
+        <div class="module__copy-image__image animate-into-view">
+            <img src="images/danilo-batista-eSceitc-s30-unsplash.jpg" alt="Photo of a kitten"/>
+        </div>
+        <div class="module__copy-image__copy animate-into-view">
+            <h2>That's a lot of information to get in 30 seconds.</h2>
+            <p>Joey doesn't share food! Three bathrooms in this place, and I threw up in a coat closet. Well, the fridge broke, so I had to eat everything. Come
+                on, Ross, you're a paleontologist. Dig a little deeper.</p>
+            <p>You have really great hair. Oh thanks, I grow it myself. What was I thinking at dinner? "Do you want soup or salad?" Both! Always order both! </p>
+        </div>
+    </div>
+</section>
+<section class="module module__copy-image module__copy-image--even">
+    <div class="container">
+        <div class="module__copy-image__image animate-into-view">
+            <img src="images/bjorn-agerbeek-fjDtABgNais-unsplash.jpg" alt="Photo of a puppy"/>
+        </div>
+        <div class="module__copy-image__copy animate-into-view">
+            <h2>Come on, Ross, you're a paleontologist. Dig a little deeper.</h2>
+            <p>I understand why Superman is here, but why is there a porcupine at the Easter Bunny's funeral? Three bathrooms in this place, and I threw up in a coat closet. You don't have a TV? What's all your furniture pointed at? They
+                don’t know that we know they know we know. If it's not a right angle, it's a wrong angle. I'm sorry, it was a one-time thing. I was very drunk, and it was someone else's subconscious. I want to quit the gym!</p>
+        </div>
+    </div>
+</section>
+<section class="module module__call-to-action animate-into-view">
+    <div class="container">
+        <div class="module module__call-to-action__inner bg-secondary">
+            <h2>I'm not great at the advice. Can I interest you in a sarcastic comment?</h2>
+            <p>Welcome to the real world! It sucks. You're gonna love it!</p>
+            <a class="btn btn--white" href="https://github.com/doubleedesign/animate-into-view" target="_blank">
+                <img class="icon" src="images/github-mark.svg" alt="">
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+<footer class="site-footer animate-into-view">
+    <p>Animate-Into-View developed by <a href="https://www.leesaward.dev" target="_blank">Leesa Ward</a>.</p>
+    <ul>
+        <li>Placeholder text from <a href="https://github.com/doubleedesign/friends-ipsum" target="_blank">Central Perk Ipsum</a></li>
+        <li>Golden Gate image: Photo by <a href="https://unsplash.com/@mvdheuvel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Maarten van den Heuvel</a> on <a href="https://unsplash.com/photos/gZXx8lKAb7Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </li>
+        <li>Kitten image: Photo by <a href="https://unsplash.com/@hiddenwindows?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Danilo Batista</a> on <a href="https://unsplash.com/photos/eSceitc-s30?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </li>
+        <li>Puppy image: Photo by <a href="https://unsplash.com/@bjornagerbeek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Bjorn Agerbeek</a> on <a href="https://unsplash.com/photos/fjDtABgNais?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>
