@@ -1,4 +1,4 @@
-import { animateIntoView } from "dist/animate-into-view.js";
+import { animateIntoView } from "./dist/animate-into-view.js";
 
 document.addEventListener('DOMContentLoaded', function() {
 	animateIntoView({
