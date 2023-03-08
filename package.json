@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"description": "Using IntersectionObserver and CSS animations to have page elements make grand entrances.",
+	"keywords": ["css", "sass", "animate", "animate-css", "animation", "motion", "IntersectionObserver"],
 	"author": "Leesa Ward",
 	"homepage": "https://doubleedesign.github.io/animate-into-view/",
 	"repository": {
