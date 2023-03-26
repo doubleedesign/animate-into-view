@@ -4,6 +4,8 @@ Yet another CSS animation library.
 
 **Uses IntersectionObservers and CSS animations to have page elements make grand entrances.**
 
+[Find on NPM](https://www.npmjs.com/package/@doubleedesign/animate-into-view)
+
 - [Basic usage](#basic-usage)
   - [Add your own animations](#add-your-own-animations)
   - [Override animation settings](#override-animation-settings)
