@@ -128,6 +128,22 @@ $animation_names: (
 	animation-fill-mode: both;
 	visibility: hidden;
 
+	&[data-animation-state="visible"] {
+		visibility: visible;
+	}
+}
+
+@mixin animate($animation_name) {
+	&[data-animation-state="visible"] {
+		animation-name: #{$animation_name};
+	}
+}
+
+@mixin animate-base-v1 {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	visibility: hidden;
+
 	@media (prefers-reduced-motion) {
 		visibility: visible;
 	}
@@ -137,8 +153,8 @@ $animation_names: (
 	}
 }
 
-@mixin animate($animation_name) {
-	@include animate-base;
+@mixin animatev1($animation_name) {
+	@include animate-base-v1;
 
 	&.aiv-visible {
 		animation-name: #{$animation_name};

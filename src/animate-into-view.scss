@@ -13,13 +13,31 @@ $animation_names: (
 );
 
 
+// Version 2
+[data-animate-into-view] {
+	// This is on the base selector to support custom animations
+	@include animate-base;
+
+	// This shouldn't be needed because the JS should remove the attributes for these users, but...just in case
+	@media (prefers-reduced-motion) {
+		visibility: visible !important;
+		animation-name: none !important;
+	}
+}
+@each $animation_name in $animation_names {
+	[data-animate-into-view="#{$animation_name}"] {
+		@include animate($animation_name);
+	}
+}
+
+// Version 1
 .animate-into-view {
 	@include animate-base;
 
 	&.aiv-visible {
 		@each $animation_name in $animation_names {
 			&.aiv-#{$animation_name} {
-				@include animate($animation_name);
+				@include animatev1($animation_name);
 			}
 		}
 	}

@@ -7,10 +7,13 @@ Yet another CSS animation library.
 - [Find on NPM](https://www.npmjs.com/package/@doubleedesign/animate-into-view) 
 - [Documentation site with demo pages](https://doubleedesign.github.io/animate-into-view/)
 ---
-- [Basic usage](#basic-usage)
+- [Recommended usage](#recommended-usage)
+  - [Data attributes](#data-attributes)
+- [Customisation](#customisation)
   - [Add your own animations](#add-your-own-animations)
   - [Override animation settings](#override-animation-settings)
-- [Advanced usage](#advanced-usage)
+- [Other usage options](#advanced-usage)
+  - [CSS classes](#css-classes)
   - [With SCSS](#with-scss)
   - [With JS](#with-js)
 - [Accessibility](#accessibility)
@@ -26,7 +29,72 @@ The currently available animations fall into two broad categories:
 
 Available animations are `fadeIn`, `fadeInUp`, `fadeInDown`, `fadeInLeft`, `fadeInRight`, `slideInUp`, `slideInDown`, `slideInLeft`, `slideInRight`.
 
-## Basic Usage
+## Recommended usage
+
+### Data attributes
+
+Version 2 introduced the data attribute method, which is now the recommended way to use Animate-Into-View as it is cleaner:
+- It cleans up after itself
+  - once the animation has run, the data attributes are removed from your HTML
+  - if the user has `prefers-reduced-motion` enabled, the data attributes are removed on page load (assuming they still have JavaScript enabled)
+- It doesn't interfere with any other logic related to the `class` attribute in your CSS or JS (e.g., `[class^="foo"]` (class begins with) or `[class$="foo"]` (class ends with) selectors
+- It is easier to apply or modify dynamically using custom JavaScript if needed.
+
+1. Add the CSS and JS to your page.
+```html
+<link href="path/to/animate-into-view.css" rel="stylesheet"/>
+<script src="path/to/animate-into-view.js" type="module"></script>
+```
+
+2. Add the `data-animate-into-view` attribute to the element(s) you want to animate in; and optionally add `data-animation-threshold` too:
+```html
+<div class="module__hero__image" data-animate-into-view="fadeIn" data-animation-threshold="0.5">
+    <img src="images/city-of-gold-coast-O3ji6Tv0PtY-unsplash.jpg" alt="Gold Coast"/>
+</div>
+```
+
+## Customisation
+
+### Add your own animations
+Add your own animations in your CSS by creating the relevant animation and data attribute selector (or `aiv-` class if using the older implementation style). Below is an example of how `fadeIn` works:
+
+```css
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+[data-animate-into-view=fadeIn][data-animation-state=visible] {
+    animation-name: fadeIn;
+}
+```
+Essential styles are applied to the data attribute selectors `data-animate-into-view` and `data-animation-state` (the latter is added dynamically by the JavaScript).
+
+If using the CSS class method described below, you will need to add the base `animate-into-view` class to the element for your custom animation to work.
+
+### Override animation settings
+You can also add overrides in your CSS, for example to change the animation duration or add a delay:
+```css
+/** Globally **/
+[data-animate-into-view] {
+    animation-duration: 1s; /* Default is 1s*/
+    animation-delay: 0.3s; /* No delay by default, add yours here if desired */
+}
+
+/** To a specific-element **/
+.foo {
+    animation-duration: 1s; /* Default is 1s*/
+    animation-delay: 0.3s; /* No delay by default, add yours here if desired */
+}
+```
+
+## Other usage options
+
+### CSS classes
 
 This method uses the default `threshold` of 0.75, meaning the animation will be triggered when 75% of the element is visible in the viewport.
 
@@ -42,44 +110,7 @@ This method uses the default `threshold` of 0.75, meaning the animation will be 
 </section>
 ```
 
-You can adjust the duration of the animation by overriding the `animation-duration` property in `.animate-into-view` in your own CSS.
-
-### Add your own animations
-Add your own animations in your CSS by creating the relevant animation and `aiv-` class. Below is an example of how `fadeIn` works:
-
-```css
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.animate-into-view.aiv-visible.aiv-fadeIn {
-    animation-name: fadeIn;
-}
-```
-Essential styles are applied to `.animate-into-view` and `.aiv-visible` (the latter is added by the JavaScript), so you must still add the `animate-into-view` class to the element for your custom animation to work.
-
-### Override animation settings
-You can also add overrides in your CSS, for example to change the animation duration or add a delay:
-```css
-/** Globally **/
-.animate-into-view {
-    animation-duration: 1s; /* Default is 1s*/
-    animation-delay: 0.3s; /* No delay by default, add yours here if desired */
-}
-
-/** To a specific-element **/
-.foo {
-    animation-duration: 1s; /* Default is 1s*/
-    animation-delay: 0.3s; /* No delay by default, add yours here if desired */
-}
-```
-
-## Advanced usage
+You can adjust the duration of the animation by overriding the `animation-duration` property in your own CSS.
 
 ### With SCSS
 You can use SCSS mixins instead of putting classes in your HTML, except for `animate-into-view` as that's what triggers the `IntersectionObserver`. (Use in combination with the JS option below to use entirely your own selectors instead). This can keep your HTML a bit cleaner, as well as give you more options such as applying different animations at different breakpoints using media queries.

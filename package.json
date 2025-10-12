@@ -1,6 +1,6 @@
 {
 	"name": "@doubleedesign/animate-into-view",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"type": "module",
 	"description": "Using IntersectionObserver and CSS animations to have page elements make grand entrances.",
 	"keywords": ["css", "sass", "animate", "animate-css", "animation", "motion", "IntersectionObserver"],
@@ -14,7 +14,8 @@
 	"scripts": {
 		"sass:dev": "sass --watch src:dist docs",
 		"build": "tsc && sass src:dist demo && cp -r dist demo",
-		"build:docs": "cd docusaurus && yarn build && mv build/* ../docs && cp -r ../demo ../docs/"
+		"build:docs": "cd docusaurus && yarn build && mv build/* ../docs && cp -r ../demo ../docs/",
+		"deploy:docs": "yarn build:docs && git subtree push --prefix docs origin gh-pages"
 	},
 	"devDependencies": {
 		"eslint": "^8.34.0",
