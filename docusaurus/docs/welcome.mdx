@@ -9,7 +9,7 @@ title: Welcome
 
 ## Introduction
 
-Animate-Into-View uses JavaScript [Intersection Observers](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver) to detect when an element (or set amount of an element) is visible in the viewport and adds the `aiv-visible` class, which is in turn used to apply CSS animations to the element.
+Animate-Into-View uses JavaScript [Intersection Observers](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver) to detect when an element (or set amount of an element) is visible in the viewport and adds a data attribute (or class) which is in turn used to apply CSS animations to the element.
 
 The currently available animations fall into two broad categories:
 - **Fade-ins**: Animates opacity from 0 to 1, and position for all except `fadeIn` (e.g., `fadeInLeft` has the element start off to the left of its final position).
@@ -17,31 +17,12 @@ The currently available animations fall into two broad categories:
 
 Available animations are `fadeIn`, `fadeInUp`, `fadeInDown`, `fadeInLeft`, `fadeInRight`, `slideInUp`, `slideInDown`, `slideInLeft`, `slideInRight`.
 
-There are currently three methods to use Animate-Into-View, so here's demos of each:
+There are currently four methods to use Animate-Into-View. See the usage pages in this site for details on how to use each method.
 
-<ul className="flex-list">
-	<li className="flex-list__item">
-		<span>Basic HTML and CSS (pre-defined classes)</span>
-		<a href="https://doubleedesign.github.io/animate-into-view/demo/demo-basic.html" target="_blank">Live demo</a>
-		<a href="https://github.com/doubleedesign/animate-into-view/blob/master/demo/demo-basic.html">Demo code</a>
-	</li>
-	<li className="flex-list__item">
-		<span>SCSS (use provided mixins + one pre-defined class)</span>
-		<a href="https://doubleedesign.github.io/animate-into-view/demo/demo-scss.html" target="_blank">Live demo</a>
-		<a href="https://github.com/doubleedesign/animate-into-view/blob/master/demo/demo-scss.html">Demo HTML</a>
-		<a href="https://github.com/doubleedesign/animate-into-view/blob/master/demo/demo-scss.scss">Demo SCSS</a>
-	</li>
-	<li className="flex-list__item">
-		<span>JavaScript (use your own selectors + CSS from either of the above methods)</span>
-		<a href="https://doubleedesign.github.io/animate-into-view/demo/demo-js.html" target="_blank">Live demo</a>
-		<a href="https://github.com/doubleedesign/animate-into-view/blob/master/demo/demo-js.html">Demo HTML</a>
-		<a href="https://github.com/doubleedesign/animate-into-view/blob/master/demo/demo.js">Demo JS</a>
-	</li>
-</ul>
-
-See the usage pages in this site for details on how to use each method.
-
-
+:::tip
+You can see a demo of the recommended method (data attributes) at: <br/>
+https://doubleedesign.github.io/animate-into-view/demo/demo.html
+:::
 
 ## Accessibility
 

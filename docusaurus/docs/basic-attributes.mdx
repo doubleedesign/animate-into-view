@@ -1,0 +1,91 @@
+---
+slug: basic-usage
+sidebar_position: 3
+---
+
+# Basic usage: Data attributes
+
+Get up and running quickly by linking the provided CSS and adding data attributes to the HTML elements you wish to animate in.
+
+:::info
+This option was added in Version 2 and is the now recommended way to use Animate Into View.
+:::
+
+<details>
+    <summary>Advantages of the data attribute method</summary>
+    <ul>
+        <li>It is just as easy to get up and running with as the previous basic usage option
+            <ul>
+                <li>...but with the additional option to customise the threshold</li>
+            </ul>
+        </li>
+        <li>It is cleaner in that:
+            <ul>
+                <li>it cleans up after itself:
+                    <ul>
+                        <li>once the animation has run, the data attributes are removed from your HTML</li>
+                        <li> if the user has `prefers-reduced-motion` enabled, the data attributes are removed on page load (assuming they still have JavaScript enabled)</li>
+                    </ul>
+                </li>
+                <li> it doesn't interfere with any other logic related to the `class` attribute in your CSS or JS (e.g., `[class^="foo"]` (class begins with) or `[class$="foo"]` (class ends with) selectors</li>
+                <li>it is easier to apply or modify dynamically using custom JavaScript if needed.</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+
+1. Add the CSS and JS to your page.
+```html
+<link href="path/to/animate-into-view.css" rel="stylesheet"/>
+<script src="path/to/animate-into-view.js" type="module"></script>
+```
+
+2. Add the `data-animate-into-view` attribute to the element(s) you want to animate in; and optionally add `data-animation-threshold` too:
+```html
+<div class="module__hero__image" data-animate-into-view="fadeIn" data-animation-threshold="0.5">
+    <img src="images/city-of-gold-coast-O3ji6Tv0PtY-unsplash.jpg" alt="Gold Coast"/>
+</div>
+```
+
+You can adjust the duration of the animation by overriding the `animation-duration` property in your own CSS.
+
+
+## Customisation
+
+### Add your own animations
+Add your own animations in your CSS by creating the relevant animation and data attribute selector (or `aiv-` class if using the older implementation style). Below is an example of how `fadeIn` works:
+
+```css
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+[data-animate-into-view=fadeIn][data-animation-state=visible] {
+    animation-name: fadeIn;
+}
+```
+Essential styles are applied to the data attribute selectors `data-animate-into-view` and `data-animation-state` (the latter is added dynamically by the JavaScript).
+
+### Override animation settings
+
+You can also add overrides in your CSS, for example to change the animation duration or add a delay:
+
+```css
+/** Globally **/
+[data-animate-into-view] {
+    animation-duration: 1s; /* Default is 1s*/
+    animation-delay: 0.3s; /* No delay by default, add yours here if desired */
+}
+
+/** To a specific-element **/
+.foo {
+    animation-duration: 1s; /* Default is 1s*/
+    animation-delay: 0.3s; /* No delay by default, add yours here if desired */
+}
+```
