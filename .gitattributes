@@ -1,2 +1,4 @@
 docusaurus/** linguist-documentation
+docs/** linguist-documentation
 dist/** linguist-generated
+demo/dist/** linguist-generated
